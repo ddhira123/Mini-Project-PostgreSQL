@@ -1,8 +1,8 @@
 create or replace function get_total_trx_per_customer()
-	returns table(customer_id int,
-				  first_name varchar(40),
-				  last_name varchar(40),
-				  total_transaction numeric
+	returns table(o_customer_id int,
+				  o_first_name varchar(40),
+				  o_last_name varchar(40),
+				  o_total_transaction numeric
 				 )
 	language plpgsql
 as $$
@@ -22,4 +22,3 @@ begin
             order by total_transaction desc
         ) select * from customer_total_transaction;
 end; $$;
-
